@@ -1,0 +1,9 @@
+title,date,start_time,end_time,location,price,description,image,signup_url,show
+Spring Bake Sale Fundraiser,2026-03-20,11:00,14:00,Main Foyer,,"Raising funds for a local animal shelter with a bake sale run by the committee.",,,yes
+Freshers' Week Meet & Greet,2026-09-08,13:00,15:00,Student Centre Courtyard,,"Our first event of the year. Meet the committee and sign up for the year ahead.",,,yes
+Clinical Skills Workshop,2026-10-15,18:00,20:00,Clinical Skills Lab,,"Hands-on practice session covering bandaging, restraint techniques and patient handling, run by final-year students.",,https://example.com/TODO-signup-clinical-skills,yes
+Guide Dogs Ireland Talk,2026-10-29,13:00,14:00,Lecture Theatre 2,0,"A guest talk from Guide Dogs Ireland on assistance dog training and the role of vet nurses in canine welfare.",,,yes
+Halloween Social,2026-10-31,20:00,,The Attic Bar,€5,"Fancy dress social night: best vet-themed costume wins a prize!",,,yes
+Exam Study Session,2026-11-20,17:00,19:00,Library Group Study Room 3,,"Drop-in study session with past papers and notes shared between years.",,,yes
+Christmas Jumper Social,2026-12-11,19:30,23:00,Students' Union Bar,€5,"End-of-semester social: wear your best Christmas jumper.",,https://example.com/TODO-signup-xmas,no
+Lurgybrack Farm Visit,2027-03-10,10:00,15:00,Lurgybrack Farm,,"A hands-on day with the animals at Lurgybrack Farm, wellies recommended!",,https://example.com/TODO-signup-farm-visit,yes

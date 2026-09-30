@@ -1,0 +1,2 @@
+title,date,start_time,end_time,location,price,description,image,signup_url,show
+Example Event Title,2026-12-01,18:00,19:00,Room G01,Free,"Short description of the event goes here.",example-event.jpg,https://example.com/signup,yes
