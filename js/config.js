@@ -24,8 +24,7 @@ window.SITE_CONFIG = {
   // TODO: replace with the real Students' Union membership page link.
   suJoinUrl: "https://example.com/TODO-su-membership-link",
 
-  // TODO: replace with the real society email address.
-  email: "TODO@example.com",
+  email: "atuvetnursesociety@gmail.com",
 
   instagramHandle: "@atuvetnursesociety",
   instagramUrl: "https://www.instagram.com/atuvetnursesociety/",
