@@ -36,8 +36,8 @@ window.SITE_CONFIG = {
   // Leave any of these blank ("") and the site will automatically use the
   // sample data in the /data folder instead, so the site never looks broken.
   // See README.md, section "One-time setup", for the full walkthrough.
-  eventsCsvUrl: "",
-  committeeCsvUrl: "",
-  galleryCsvUrl: "",
-  resourcesCsvUrl: "",
+  eventsCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTosgc14KMfgz_CXmsYfXSviIV7qECg3HrU5ib5LZgruDsrN6edK_iZWOeMrZJbguYtzJQ_LMYxfQZ_/pub?gid=1237458216&single=true&output=csv",
+  committeeCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTosgc14KMfgz_CXmsYfXSviIV7qECg3HrU5ib5LZgruDsrN6edK_iZWOeMrZJbguYtzJQ_LMYxfQZ_/pub?gid=1208955717&single=true&output=csv",
+  galleryCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTosgc14KMfgz_CXmsYfXSviIV7qECg3HrU5ib5LZgruDsrN6edK_iZWOeMrZJbguYtzJQ_LMYxfQZ_/pub?gid=801687777&single=true&output=csv",
+  resourcesCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTosgc14KMfgz_CXmsYfXSviIV7qECg3HrU5ib5LZgruDsrN6edK_iZWOeMrZJbguYtzJQ_LMYxfQZ_/pub?gid=1671987721&single=true&output=csv",
 };
