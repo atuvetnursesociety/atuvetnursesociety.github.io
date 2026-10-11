@@ -27,8 +27,8 @@
   /* --- Neutral palette --- */
   --color-bg: #fbf8f4;      /* warm off-white page background */
   --color-card: #ffffff;    /* card / panel background */
-  --color-text: #2b2b2b;    /* charcoal body text */
-  --color-text-soft: #5a5652; /* softer charcoal for secondary text */
+  --color-text: #073236;    /* deep cyan body text (replaces former near-black) */
+  --color-text-soft: #355e62; /* softer deep cyan for secondary text */
   --color-border: #e7ddd0;
 
   /* --- Fonts --- */
@@ -528,18 +528,6 @@ main { display: block; }
 .committee-photo img[hidden] { display: none; }
 .committee-photo svg { width: 55%; height: 55%; }
 
-.fun-fact {
-  display: inline-block;
-  align-self: flex-start;
-  background: var(--color-sand);
-  color: var(--color-text);
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.3em 0.8em;
-  border-radius: 999px;
-  margin-top: var(--space-1);
-}
-
 /* Committee cards: a coloured role badge + coloured name break up what
    would otherwise be a block of same-weight, same-colour text. Colour
    rotates per card in step with the card's shadow colour below. */
@@ -553,20 +541,6 @@ main { display: block; }
   color: #fff;
   padding: 0.25em 0.85em;
   border-radius: 999px;
-}
-.committee-facts {
-  list-style: none;
-  margin: var(--space-1) 0 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35em;
-  color: var(--color-text-soft);
-  font-size: 0.95rem;
-}
-.committee-facts strong {
-  color: var(--color-text);
-  font-weight: 600;
 }
 .card-grid .committee-card:nth-child(3n+1) h3 { color: var(--color-seafoam-dark); }
 .card-grid .committee-card:nth-child(3n+1) .committee-role { background: var(--color-seafoam-dark); }
@@ -588,123 +562,6 @@ main { display: block; }
   flex-wrap: wrap;
   gap: var(--space-1);
 }
-
-/* ============================================================
-   Gallery
-   ============================================================ */
-.gallery-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-1);
-  margin-bottom: var(--space-4);
-}
-.gallery-filters button {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  background: #fff;
-  border: 2px solid var(--color-text);
-  border-radius: 999px;
-  padding: 0.4em 1.1em;
-  cursor: pointer;
-}
-.gallery-filters button[aria-pressed="true"] {
-  background: var(--color-seafoam-dark);
-  color: #fff;
-  border-color: var(--color-seafoam-dark);
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-2);
-}
-@media (min-width: 640px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 960px) { .gallery-grid { grid-template-columns: repeat(4, 1fr); } }
-
-.gallery-item {
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  background: none;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  aspect-ratio: 1 / 1;
-  position: relative;
-}
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition-fast);
-}
-.gallery-item:hover img { transform: scale(1.06); }
-
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(20, 18, 16, 0.92);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-3);
-  z-index: 1000;
-}
-.lightbox[hidden] { display: none; }
-.lightbox__frame {
-  max-width: min(92vw, 60rem);
-  max-height: 88vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-2);
-}
-.lightbox__frame img {
-  max-height: 72vh;
-  width: auto;
-  border-radius: var(--radius-sm);
-}
-.lightbox__caption { color: #fff; text-align: center; }
-.lightbox__controls {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-2);
-  pointer-events: none;
-}
-.lightbox__controls button {
-  pointer-events: auto;
-}
-.lightbox button {
-  background: rgba(255,255,255,0.15);
-  border: 2px solid #fff;
-  color: #fff;
-  border-radius: 999px;
-  width: 44px;
-  height: 44px;
-  cursor: pointer;
-  font-size: 1.1rem;
-}
-.lightbox__close {
-  position: absolute;
-  top: var(--space-2);
-  right: var(--space-2);
-}
-
-/* ============================================================
-   Resources page
-   ============================================================ */
-.resource-section { margin-bottom: var(--space-5); }
-.resource-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-2); }
-.resource-item {
-  background: var(--color-card);
-  border-left: 5px solid var(--color-seafoam);
-  border-radius: var(--radius-sm);
-  padding: var(--space-3);
-}
-.resource-item h3 { margin-bottom: 0.2em; }
-.resource-item--default { border-left-color: var(--color-lavender); }
 
 /* ============================================================
    Loading / empty states
@@ -802,4 +659,19 @@ main { display: block; }
 .text-center p {
   margin-left: auto;
   margin-right: auto;
+}
+
+/* ============================================================
+   Suggestion box
+   ============================================================ */
+.suggestion-embed {
+  display: block;
+  width: 100%;
+  max-width: 48rem;
+  height: 70vh;
+  min-height: 32rem;
+  margin: 0 auto;
+  border: 2px solid var(--color-text);
+  border-radius: var(--radius);
+  background: var(--color-card);
 }

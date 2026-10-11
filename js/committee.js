@@ -9,26 +9,6 @@
   renderCommittee(members);
 })();
 
-/**
- * Renders a member's "bio" field as a list, exactly as written in the
- * sheet — one list item per line. A line written as "Label: detail" gets
- * its label bolded; a line with no colon just renders as plain text. This
- * deliberately does not rewrite or summarise what's in the cell.
- */
-function renderCommitteeFacts(bio) {
-  const lines = (bio || '').split('\n').map((line) => line.trim()).filter(Boolean);
-  if (!lines.length) return '';
-  return lines
-    .map((line) => {
-      const match = line.match(/^([^:]{1,40}:)\s*(.*)$/);
-      if (match) {
-        return `<li><strong>${escapeHtml(match[1])}</strong> ${escapeHtml(match[2])}</li>`;
-      }
-      return `<li>${escapeHtml(line)}</li>`;
-    })
-    .join('');
-}
-
 function renderCommittee(members) {
   const container = document.getElementById('committee-grid');
   if (!container) return;
@@ -70,8 +50,6 @@ function renderCommittee(members) {
     body.innerHTML = `
       <h3>${escapeHtml(member.name)}</h3>
       <span class="committee-role">${escapeHtml(member.role)}</span>
-      <ul class="committee-facts">${renderCommitteeFacts(member.bio)}</ul>
-      ${member.fun_fact ? `<span class="fun-fact">${escapeHtml(member.fun_fact)}</span>` : ''}
     `;
 
     card.appendChild(photoWrap);

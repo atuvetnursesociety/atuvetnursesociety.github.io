@@ -21,8 +21,7 @@ window.SITE_CONFIG = {
   tagline: "A community for vet nursing students to learn, socialise and support each other.", // shown on the home page hero — TODO: replace with your own line if you'd like a different one
 
   // --- Joining & contact --------------------------------------------------
-  // TODO: replace with the real Students' Union membership page link.
-  suJoinUrl: "https://example.com/TODO-su-membership-link",
+  suJoinUrl: "https://donegal.atusulife.ie/society/veterinary",
 
   email: "atuvetnursesociety@gmail.com",
 
@@ -40,4 +39,13 @@ window.SITE_CONFIG = {
   committeeCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTosgc14KMfgz_CXmsYfXSviIV7qECg3HrU5ib5LZgruDsrN6edK_iZWOeMrZJbguYtzJQ_LMYxfQZ_/pub?gid=1208955717&single=true&output=csv",
   galleryCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTosgc14KMfgz_CXmsYfXSviIV7qECg3HrU5ib5LZgruDsrN6edK_iZWOeMrZJbguYtzJQ_LMYxfQZ_/pub?gid=801687777&single=true&output=csv",
   resourcesCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTosgc14KMfgz_CXmsYfXSviIV7qECg3HrU5ib5LZgruDsrN6edK_iZWOeMrZJbguYtzJQ_LMYxfQZ_/pub?gid=1671987721&single=true&output=csv",
+
+  // --- Suggestion box -----------------------------------------------------
+  // Paste the embed URL of a Google Form here to show it on the Suggestions
+  // page. To get it: open your Form → Send (top right) → the "<>" embed
+  // tab → copy the "src" value out of the <iframe> code shown there (it
+  // looks like https://docs.google.com/forms/d/e/.../viewform?embedded=true).
+  // Leave blank and the page will show a plain "email us your suggestions"
+  // message instead, so it never looks broken.
+  suggestionFormUrl: "",
 };

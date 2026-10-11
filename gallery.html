@@ -33,6 +33,7 @@
       <li><a href="events.html"><svg class="paw-bullet" viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M32 38c-11 0-23 9-23 19 0 6 5 10 11 10 6 0 8-3 12-3s7 3 12 3c7 0 11-4 11-10 0-10-12-19-23-19z"/><circle cx="13" cy="26" r="8"/><circle cx="25" cy="13" r="8"/><circle cx="39" cy="13" r="8"/><circle cx="52" cy="23" r="7.5"/></svg>Events</a></li>
       <li><a href="gallery.html" aria-current="page"><svg class="paw-bullet" viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M32 38c-11 0-23 9-23 19 0 6 5 10 11 10 6 0 8-3 12-3s7 3 12 3c7 0 11-4 11-10 0-10-12-19-23-19z"/><circle cx="13" cy="26" r="8"/><circle cx="25" cy="13" r="8"/><circle cx="39" cy="13" r="8"/><circle cx="52" cy="23" r="7.5"/></svg>Gallery</a></li>
       <li><a href="resources.html"><svg class="paw-bullet" viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M32 38c-11 0-23 9-23 19 0 6 5 10 11 10 6 0 8-3 12-3s7 3 12 3c7 0 11-4 11-10 0-10-12-19-23-19z"/><circle cx="13" cy="26" r="8"/><circle cx="25" cy="13" r="8"/><circle cx="39" cy="13" r="8"/><circle cx="52" cy="23" r="7.5"/></svg>Resources</a></li>
+      <li><a href="suggestions.html"><svg class="paw-bullet" viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M32 38c-11 0-23 9-23 19 0 6 5 10 11 10 6 0 8-3 12-3s7 3 12 3c7 0 11-4 11-10 0-10-12-19-23-19z"/><circle cx="13" cy="26" r="8"/><circle cx="25" cy="13" r="8"/><circle cx="39" cy="13" r="8"/><circle cx="52" cy="23" r="7.5"/></svg>Suggestions</a></li>
       <li><a href="join.html"><svg class="paw-bullet" viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M32 38c-11 0-23 9-23 19 0 6 5 10 11 10 6 0 8-3 12-3s7 3 12 3c7 0 11-4 11-10 0-10-12-19-23-19z"/><circle cx="13" cy="26" r="8"/><circle cx="25" cy="13" r="8"/><circle cx="39" cy="13" r="8"/><circle cx="52" cy="23" r="7.5"/></svg>Join</a></li>
     </ul>
   </nav>
@@ -48,28 +49,12 @@
   </section>
 
   <section class="section">
-    <div class="container">
-      <div id="gallery-filters" class="gallery-filters"></div>
-      <div id="gallery-grid" class="gallery-grid">
-        <p class="state-message">Loading photos…</p>
-      </div>
+    <div class="container text-center fade-in-up">
+      <p>We don't have any photos up yet — send us any photos you'd like to be included! Message us on Instagram or drop them to our email and we'll get them added to the gallery.</p>
     </div>
   </section>
 
 </main>
-
-<!-- Lightbox, hidden by default, filled in and shown by js/gallery.js -->
-<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
-  <div class="lightbox__controls">
-    <button type="button" id="lightbox-prev" aria-label="Previous photo">&#8249;</button>
-    <button type="button" id="lightbox-next" aria-label="Next photo">&#8250;</button>
-  </div>
-  <button type="button" class="lightbox__close" id="lightbox-close" aria-label="Close photo viewer">&times;</button>
-  <div class="lightbox__frame">
-    <img id="lightbox-image" src="" alt="">
-    <p class="lightbox__caption" id="lightbox-caption"></p>
-  </div>
-</div>
 
 <footer class="site-footer">
   <div class="container">
@@ -86,10 +71,7 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script src="js/config.js"></script>
-<script src="js/data.js"></script>
 <script src="js/site.js"></script>
-<script src="js/gallery.js"></script>
 </body>
 </html>

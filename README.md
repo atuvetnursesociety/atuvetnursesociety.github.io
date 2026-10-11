@@ -1,7 +1,7 @@
 # ATU Vet Nursing Society website
 
 This is the website for the ATU Vet Nursing Society, published at
-`https://[username].github.io/atu_vetnurse_soc/`.
+`https://kaoreill.github.io/atu_vetnurse_soc/`.
 
 You do **not** need to know how to code to keep this site up to date. Almost
 everything — events, committee members, photos, resources — is managed from a
@@ -31,9 +31,9 @@ type of content: **Events**, **Committee**, **Gallery**, **Resources**.
 | Tab | Columns | Notes |
 |---|---|---|
 | Events | `title, date, start_time, end_time, location, price, description, image, signup_url, show` | `date` must be written as `YYYY-MM-DD` (e.g. `2026-11-20`). `start_time`/`end_time` as `HH:MM` in 24-hour time (e.g. `18:00`). Leave `price` blank or `0` for a free event. Leave `signup_url` blank if there's no sign-up link — the "Sign up" button just won't show. `image` is optional — see photo naming below. |
-| Committee | `name, role, bio, fun_fact, photo, order, show` | `order` is a number controlling the order people appear in (1 = first). `photo` is optional. For `bio`, put each fact on its own line inside the cell (in Google Sheets, press Alt+Enter — or Option+Enter on a Mac — to start a new line without moving to the next cell), written as `Label: detail`, e.g. `From: Galway`. The site shows each line as its own bullet with the label in bold, exactly as typed — it doesn't rewrite anything. |
-| Gallery | `image, caption, album, date, show` | `album` groups photos together for the album filter on the Gallery page. `date` is `YYYY-MM-DD`, used to sort newest-first. |
-| Resources | `section, title, description, url, order, show` | `section` must be exactly one of: `Placement tips`, `Careers info`, or `Wellbeing support`. `url` is optional. |
+| Committee | `name, role, bio, fun_fact, photo, order, show` | `order` is a number controlling the order people appear in (1 = first). `photo` is optional. The committee cards on the site currently only display `name`, `role` and `photo` — `bio` and `fun_fact` can still be filled in for the sheet's own records, but won't show on the page. |
+| Gallery | `image, caption, album, date, show` | Not currently wired up — the Gallery page shows a static "send us your photos" message regardless of what's in this tab. See the "For developers" section if you want to reconnect it. |
+| Resources | `section, title, description, url, order, show` | Not currently wired up — the Resources page shows a static "under construction" message regardless of what's in this tab. See the "For developers" section if you want to reconnect it. |
 
 A blank `show` column is treated as "yes" — you only need to type something
 there if you want to hide a row.
@@ -153,7 +153,29 @@ content, the same way you'd share any Google Doc.
 
 ---
 
-## 6. Handing the site over to next year's committee
+## 6. Setting up the suggestion box
+
+The Suggestions page is built to show an embedded Google Form, but needs you
+to create that Form once — it isn't pre-filled in like the Sheet URLs above:
+
+1. Go to [forms.google.com](https://forms.google.com) and create a new Form
+   (a title plus one or two questions is enough, e.g. "Your suggestion" and
+   an optional "Your name").
+2. Click **Send** (top right), then the **`<>`** embed tab.
+3. Copy the `src="..."` link out of the `<iframe>` code shown there — it
+   looks like `https://docs.google.com/forms/d/e/.../viewform?embedded=true`.
+4. Paste it into `suggestionFormUrl` in `js/config.js`, between the quote
+   marks, and commit the change.
+5. Form responses land in that Form's own **Responses** tab (or link them
+   to a Sheet via the spreadsheet icon there) — nobody needs to check the
+   website itself for new suggestions.
+
+Until step 4 is done, the Suggestions page shows a plain "email us your
+suggestion" message instead, so it never looks broken.
+
+---
+
+## 7. Handing the site over to next year's committee
 
 When your term ends, make sure the next committee has:
 
@@ -192,16 +214,27 @@ committee, update them in `js/config.js` (see section 4).
     data-driven page.
   - `js/site.js` — shared nav/footer/identity-injection/scroll-reveal
     behaviour, loaded on every page.
-  - `js/home.js`, `committee.js`, `events.js`, `gallery.js`, `resources.js`
-    — one script per data-driven page.
+  - `js/home.js`, `committee.js`, `events.js` — one script per data-driven
+    page. The Gallery and Resources pages are currently static placeholders
+    with no script of their own — `js/gallery.js` and `js/resources.js`
+    (which used to render those pages from the Sheet/CSV) were removed when
+    those pages were replaced with "coming soon" messages. `js/data.js` and
+    the sheet-sourced `galleryCsvUrl`/`resourcesCsvUrl` in `config.js` still
+    work the same way the events/committee ones do, so reconnecting those
+    pages mainly means re-adding a script in that style.
   - `data/*.csv` — local fallback data, used whenever a Sheet URL in
-    `config.js` is blank or fails to load.
+    `config.js` is blank or fails to load. `data/gallery.csv` and
+    `data/resources.csv` are currently empty (header row only) since those
+    pages aren't rendering from them.
   - `data/templates/*.csv` — minimal starter templates for setting up a
     fresh Google Sheet.
+  - `js/suggestions.js` — embeds the Google Form configured in
+    `suggestionFormUrl` on the Suggestions page, or shows an email fallback
+    if it's blank. See section 6 above to set the Form up.
 - **Deployment:** GitHub repo → Settings → Pages → Deploy from branch →
   `main` / `/ (root)`. The `.nojekyll` file at the repo root stops GitHub
   Pages from running the site through Jekyll, which isn't needed here.
 - **Why header/footer markup is duplicated across every `.html` file:**
   there's no server-side include mechanism without a build step, so each
   page has its own copy. If you change the nav or footer, update it in all
-  seven HTML files.
+  eight HTML files.
