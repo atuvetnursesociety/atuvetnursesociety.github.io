@@ -430,7 +430,7 @@ main { display: block; }
   justify-content: center;
 }
 .hero__blob img {
-  width: 55%;
+  width: 80%;
   height: auto;
 }
 
@@ -612,28 +612,6 @@ main { display: block; }
     transition-duration: 0.001ms !important;
   }
 }
-
-/* ============================================================
-   Feature row (Home "what we do" teaser, About page highlights)
-   ============================================================ */
-.feature-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
-}
-@media (min-width: 640px) {
-  .feature-row { grid-template-columns: repeat(3, 1fr); }
-}
-.feature-icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: var(--space-2);
-}
-.feature:nth-child(3n+1) .feature-icon { color: var(--color-seafoam-dark); }
-.feature:nth-child(3n+2) .feature-icon { color: var(--color-lavender-dark); }
-.feature:nth-child(3n+3) .feature-icon { color: var(--color-sand-dark); }
-.feature h3 { margin-bottom: 0.3em; }
-.feature p { color: var(--color-text-soft); margin-bottom: 0; }
 
 /* ============================================================
    Page intro utility (About / Join / Resources static copy)
