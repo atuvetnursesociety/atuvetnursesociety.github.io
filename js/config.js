@@ -47,5 +47,5 @@ window.SITE_CONFIG = {
   // looks like https://docs.google.com/forms/d/e/.../viewform?embedded=true).
   // Leave blank and the page will show a plain "email us your suggestions"
   // message instead, so it never looks broken.
-  suggestionFormUrl: "",
+  suggestionFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdPZc-ELzMGxFy_30I90wYb613eycXOr5BwniF5kS1xt_zWlw/viewform?embedded=true",
 };

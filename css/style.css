@@ -419,19 +419,61 @@ main { display: block; }
   align-items: center;
   justify-content: center;
 }
-.hero__blob {
+/* Hero badge: a seafoam circle with a dotted inner ring and a loose
+   hand-sketched wreath around it, matching the committee's drawn logo
+   treatment. The wreath is two overlapping wobbly-circle SVG paths
+   (plotted as a jittered, smoothed closed curve, not a perfect circle)
+   plus a handful of short grass-stroke paths scattered around the top
+   and sides. */
+.hero__badge {
   position: relative;
-  width: min(80vw, 340px);
+  width: min(72vw, 300px);
   aspect-ratio: 1 / 1;
-  background: var(--color-seafoam);
-  border-radius: 62% 38% 55% 45% / 45% 55% 45% 55%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.hero__blob img {
-  width: 55%;
+.hero__badge-scribble {
+  position: absolute;
+  inset: -24%;
+  width: 148%;
+  height: 148%;
+  color: var(--color-text);
+  overflow: visible;
+}
+.hero__badge-circle {
+  position: relative;
+  z-index: 1;
+  width: 72%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: var(--color-seafoam);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35em;
+  padding-bottom: 6%;
+}
+.hero__badge-ring {
+  position: absolute;
+  inset: 9%;
+  border-radius: 50%;
+  border: 3px dotted var(--color-text);
+  opacity: 0.55;
+}
+.hero__badge-logo {
+  position: relative;
+  width: 46%;
   height: auto;
+}
+.hero__badge-text {
+  position: relative;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  color: var(--color-text-soft);
 }
 
 /* ============================================================
