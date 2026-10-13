@@ -429,6 +429,17 @@ main { display: block; }
   align-items: center;
   justify-content: center;
 }
+/* Aura behind the blob: an SVG radial gradient clipped to a lumpy,
+   non-circular silhouette (hand-plotted, not a perfect circle), so it
+   fades from strong near the blob to nothing at an uneven edge, rather
+   than a uniform ring. Sized well past the blob's own box so the lumps
+   show clearly outside it. */
+.hero__blob-aura {
+  position: absolute;
+  inset: -58%;
+  z-index: -1;
+  overflow: visible;
+}
 .hero__blob img {
   width: 80%;
   height: auto;
