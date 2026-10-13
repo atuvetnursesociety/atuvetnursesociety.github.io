@@ -423,24 +423,58 @@ main { display: block; }
   position: relative;
   width: min(80vw, 340px);
   aspect-ratio: 1 / 1;
-  background: var(--color-seafoam);
-  border-radius: 62% 38% 55% 45% / 45% 55% 45% 55%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+/* The blob's own fill, as a blurred pseudo-element rather than a flat
+   background: a crisp solid-to-transparent edge would sit on top of the
+   aura like a sticker. Blurring just this layer softens that edge into
+   the aura's falloff behind it, while the hand-sketched lines and badge
+   stay crisp in their own layers on top. */
+.hero__blob::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--color-seafoam);
+  border-radius: 62% 38% 55% 45% / 45% 55% 45% 55%;
+  filter: blur(10px);
 }
 /* Aura behind the blob: an SVG radial gradient clipped to a lumpy,
    non-circular silhouette (hand-plotted, not a perfect circle), so it
    fades from strong near the blob to nothing at an uneven edge, rather
    than a uniform ring. Sized well past the blob's own box so the lumps
-   show clearly outside it. */
+   show clearly outside it.
+   The aura's box is taller than the hero section has room for, and
+   .hero clips overflow (see below) so nothing shows outside the hero
+   on either side of the page. Without help, that clip would cut the
+   aura off mid-fade right above the paw trail, with a visible hard
+   edge. The mask below fades the aura's own bottom third to nothing
+   *before* it reaches that clip line, so by the time the hard edge
+   happens there's nothing left to see — it reads as the glow finishing
+   on its own, not getting chopped off. */
 .hero__blob-aura {
   position: absolute;
   inset: -58%;
   z-index: -1;
   overflow: visible;
+  -webkit-mask-image: linear-gradient(to bottom, #000 50%, transparent 70%);
+  mask-image: linear-gradient(to bottom, #000 50%, transparent 70%);
+}
+/* Hand-sketched texture right at the blob's own edge: three overlapping
+   wobbly passes (hand-plotted, same technique as the aura above), like
+   it's been traced a few times in pencil rather than cut with a vector
+   curve. Sits just outside the badge image's own dotted ring. */
+.hero__blob-edge {
+  position: absolute;
+  inset: -10%;
+  z-index: 1;
+  color: var(--color-text);
 }
 .hero__blob img {
+  position: relative;
+  z-index: 2;
   width: 80%;
   height: auto;
 }
